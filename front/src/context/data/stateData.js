@@ -1,6 +1,7 @@
 const StateData = {
-news: [],
-shop:[],
+    news: [],
+    shop:[],
+    comments:[],
     courses:[]
-    }
-    export default StateData
+}
+export default StateData

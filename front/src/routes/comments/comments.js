@@ -1,63 +1,63 @@
-import React, {Component} from "react";
+import React from "react";
 import classes from "../../style.module.css";
 import Navbar from "../../modules/navigation/nvabar";
 import Header from "../../modules/navigation/header";
 import ContextData from "../../context/data/contextData";
-//import NewCart from "./newcartitem/newcart";
-//import NewItem from "../shop/modules/newitem";
 import {Link, useHistory} from "react-router-dom";
+
 import CommentItem from "./modules/commentItem";
-//import Courses from "../buying/buying";
-//import Destroy from "../buying/vsevse";
-//import Shop from "../shop/shop";
-export default class comments extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            items: []
-        };
+
+
+const Comments=()=>{
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const {stateDataThree, dispatchDataThree} = React.useContext(ContextData)
+    const comments=stateDataThree.comments;
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    React.useEffect(()=>{
+        const fetchShop= async ()=>{
+            try{
+                const response=await fetch('http://127.0.0.1:8000/api/cart')
+                if (response.status===200){
+                    const result= await   response.json()
+                    dispatchDataThree({
+                        type:"FETCH_NEWS",
+                        payload: result
+                    })
+                }
+            } catch (e) {
+                console.log(e)
+            }
         }
-        componentDidMount() {
-            fetch(" http://127.0.0.1:8000/api/comments ")
-                .then(res => res. json())
-                .then(
-                (result) => {
-                    // eslint-disable-next-line no-unused-expressions
-                    this.setState({
-                        isLoaded: true,
-                        items: result.comments
-                    }),
-                        (error) => {
-                            this.setState({
-                                isLoaded: true,
-                                error
-                            });
-                        }
-                }
+        fetchShop()
+    },[])
+
+
+
+    return(
+        <div>
+        <div className={classes.main}>
+        <div className={classes.navigation}>
+        <Navbar />
+
+        </div>
+        <div className={classes.content}>
+        <Header />
+        {comments.map((elem,index)=>{
+                    return(
+
+                        <CommentItem data={elem} key ={index} />
+
                 )
-    }
-            render() {
-                const {error, isLoaded, items} = this.state;
-                if (error) {
-                    return <p> Error {error.message} </p>
-                } else if (!isLoaded) {
-                    return <p> Loading… </p>
-                } else {
-                    return (
-                        <ul>
-                            {items.map(item => (
-                                <li key={item.name}>
-                                    {item.feedback}
-                                </li>
-                                )
-                            )
-                            }
-                        </ul>
-                    )
-                }
-                }
-    }
 
+                }
 
+            )}
+        <Link  className={classes.buy} to={"/buying"} > Покупка</Link>
+        </div>
+
+        </div></div>
+)
+
+}
+export default Comments

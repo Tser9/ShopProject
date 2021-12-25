@@ -1,19 +1,20 @@
 import React from "react";
 import classes from "./../../../style.module.css";
 import {Link} from "react-router-dom";
-import axios, {Axios} from "axios";
+let arr = [];
 
 const CommentItem = ({data}) => {
+    arr=arr+data.id;
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://127.0.0.1:8000/api/comments',{
-            method: 'POST',
+        fetch('http://127.0.0.1:8000/api/cart/'+data.id,{
+            method: 'DELETE',
             headers:{"Content-Type":"application/json"},
-            body: JSON.stringify(data)
+
 
         }).then(()=>{
+            window.location.reload();
 
-            console.log(JSON.stringify(data))
         })
 
 
@@ -23,13 +24,16 @@ const CommentItem = ({data}) => {
 
         <div className={classes.news} >
 
-            <img className={classes.picture} src={data.image}/>
 
-            <div><Link to="/courses">
-                <div className={classes.text3}>{data.title} </div></Link>
-                <div>{data.description} </div>
-            </div>
+
+        <div>
+        <div className={classes.text3} >{data.title} </div>
+        <div>{data.description} </div>
+
         </div>
-    )
+
+        </div>
+)
 }
 export default CommentItem
+
