@@ -3,26 +3,21 @@ import classes from "../../style.module.css";
 import Navbar from "../../modules/navigation/nvabar";
 import Header from "../../modules/navigation/header";
 import ContextData from "../../context/data/contextData";
-import NewCart from "./newcartitem/newcart";
-import NewItem from "../news/modules/newitem";
-import {Link, useHistory} from "react-router-dom";
-import Courses from "../courese/courese";
-import Destroy from "../courese/vsevse";
+import NewItem from "./modules/newitem";
+import {Link} from "react-router-dom";
 
+const Shop=()=>{
 
-const shop=()=>{
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {stateDataTwo, dispatchDataTwo} = React.useContext(ContextData)
-    const shop=stateDataTwo.shop;
+    const {stateData, dispatchData} = React.useContext(ContextData)
+    const news=stateData.news;
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     React.useEffect(()=>{
-        const fetchShop= async ()=>{
+        const fetchNews= async ()=>{
             try{
-                const response=await fetch('http://127.0.0.1:8000/api/cart')
+                const response=await fetch('http://127.0.0.1:8000/api/products')
                 if (response.status===200){
                     const result= await   response.json()
-                    dispatchDataTwo({
+                    dispatchData({
                         type:"FETCH_NEWS",
                         payload: result
                     })
@@ -31,7 +26,7 @@ const shop=()=>{
                 console.log(e)
             }
         }
-        fetchShop()
+        fetchNews()
     },[])
 
 
@@ -45,21 +40,21 @@ const shop=()=>{
                 </div>
                 <div className={classes.content}>
                     <Header />
-                    {shop.map((elem,index)=>{
+                    {news.map((elem,index)=>{
                             return(
 
-                                <NewCart data={elem} key ={index} />
+                                <NewItem data={elem} key ={index} />
 
                             )
 
                         }
 
                     )}
-                   <Link  className={classes.buy} to={"/courses"} > Покупка</Link>
+
                 </div>
 
             </div></div>
     )
 
 }
-export default shop
+export default Shop

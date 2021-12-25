@@ -7,7 +7,7 @@ import ContextData from "../../context/data/contextData";
 import {Link} from "react-router-dom";
 
 
-const Courses=()=>{
+const Buying=()=>{
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -63,4 +63,4 @@ const Courses=()=>{
 
 
 }
-export default Courses
+export default Buying
