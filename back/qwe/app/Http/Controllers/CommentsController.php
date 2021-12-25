@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Comment;
+use Illuminate\Http\Request;
 
-
-class CommentController extends Controller
+class CommentsController extends Controller
 {
     public function index()
     {
