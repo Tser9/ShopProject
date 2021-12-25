@@ -44,12 +44,13 @@ Route::put('cart/{cart}','CartController@update');
 Route::delete('cart/{cart}', 'CartController@delete');
 Route::delete('cart', 'CartController@destroy');
 
-Route::get('comments', 'CommentController@index');
 
-Route::get('comments/{comment}', 'CommentController@show');
+Route::get('comments', 'CommentsController@index');
 
-Route::post('comments','CommentController@store');
+Route::get('comments/{comment}', 'CommentsController@show');
 
-Route::put('comments/{comment}','CommentController@update');
+Route::post('comments','CommentsController@store');
 
-Route::delete('comments/{comment}', 'CommentController@delete');
+Route::put('comments/{comment}','CommentsController@update');
+
+Route::delete('comments/{comment}', 'CommentsController@delete');
