@@ -13,6 +13,9 @@ const Navbar = () =>{
             <div>
                 <Link to="/shop"> Магазин</Link>
             </div>
+            <div>
+                <Link to="/comments"> Отзывы</Link>
+            </div>
 
         </div>
 

@@ -11,6 +11,7 @@ import StateData from "./context/data/stateData";
 import ReducerTwoData from "./context/data/redtwo";
 import Auth from "./routes/auth/authpage";
 import Buying from "./routes/buying/buying";
+import Comments from "./routes/comments/comments";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/auth" component={Auth}/>
           <Route path="/" exact component={General}/>
               <Route path="/buying" component={Buying}/>
+              <Route path="/comments" component={Comments}/>
           </ContextData.Provider>
 
         <Route path="/cart" component={cart}/>
