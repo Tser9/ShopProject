@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import classes from "../../style.module.css";
 import Navbar from "../../modules/navigation/nvabar";
 import Header from "../../modules/navigation/header";
@@ -10,54 +10,54 @@ import CommentItem from "./modules/commentItem";
 //import Courses from "../buying/buying";
 //import Destroy from "../buying/vsevse";
 //import Shop from "../shop/shop";
-
-const Comments=()=>{
-
-    const {stateData, dispatchData} = React.useContext(ContextData)
-    const comments=stateData.news;
-
-    React.useEffect(()=>{
-        const fetchComments= async ()=>{
-            try{
-                const response=await fetch('http://127.0.0.1:8000/api/comments')
-                if (response.status===200){
-                    const result= await   response.json()
-                    dispatchData({
-                        type:"FETCH_COMMENTS",
-                        payload: result
-                    })
-                }
-            } catch (e) {
-                console.log(e)
-            }
+export default class comments extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            items: []
+        };
         }
-        fetchComments()
-    },[])
-
-    return(
-        <div>
-            <div className={classes.main}>
-                <div className={classes.navigation}>
-                    <Navbar />
-
-                </div>
-                <div className={classes.content}>
-                    <Header />
-                    {comments.map((elem,index)=>{
-                            return(
-
-                                <CommentItem data={elem} key ={index} />
-
-                            )
-
+        componentDidMount() {
+            fetch(" http://127.0.0.1:8000/api/comments ")
+                .then(res => res. json())
+                .then(
+                (result) => {
+                    // eslint-disable-next-line no-unused-expressions
+                    this.setState({
+                        isLoaded: true,
+                        items: result.comments
+                    }),
+                        (error) => {
+                            this.setState({
+                                isLoaded: true,
+                                error
+                            });
                         }
+                }
+                )
+    }
+            render() {
+                const {error, isLoaded, items} = this.state;
+                if (error) {
+                    return <p> Error {error.message} </p>
+                } else if (!isLoaded) {
+                    return <p> Loading… </p>
+                } else {
+                    return (
+                        <ul>
+                            {items.map(item => (
+                                <li key={item.name}>
+                                    {item.feedback}
+                                </li>
+                                )
+                            )
+                            }
+                        </ul>
+                    )
+                }
+                }
+    }
 
-                    )}
-
-                </div>
-
-            </div></div>
-    )
-}
-export default Comments
 

@@ -43,3 +43,13 @@ Route::put('cart/{cart}','CartController@update');
 
 Route::delete('cart/{cart}', 'CartController@delete');
 Route::delete('cart', 'CartController@destroy');
+
+Route::get('comments', 'CommentController@index');
+
+Route::get('comments/{comment}', 'CommentController@show');
+
+Route::post('comments','CommentController@store');
+
+Route::put('comments/{comment}','CommentController@update');
+
+Route::delete('comments/{comment}', 'CommentController@delete');
