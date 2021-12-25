@@ -26,6 +26,9 @@ function App() {
               <Route path="/auth" component={Auth}/>
           <Route path="/" exact component={General}/>
               <Route path="/buying" component={Buying}/>
+
+
+
           </ContextData.Provider>
 
         <Route path="/cart" component={cart}/>
