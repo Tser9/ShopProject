@@ -1,0 +1,11 @@
+
+.news{
+  display:flex;
+  padding: 10px;
+  background: red;
+  text-align: center;
+}
+.card .picture{
+
+  width: 15%;
+}
