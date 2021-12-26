@@ -40,16 +40,19 @@ const Shop=()=>{
                 </div>
                 <div className={classes.content}>
                     <Header />
-                    {news.map((elem,index)=>{
-                            return(
+                    <div className={classes.product}>
 
-                                <NewItem data={elem} key ={index} />
+                        {news.map((elem,index)=>{
+                                return(
 
-                            )
+                                    <NewItem data={elem} key ={index} />
 
-                        }
+                                )
 
-                    )}
+                            }
+
+                        )}
+                    </div>
 
                 </div>
 
