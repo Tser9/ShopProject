@@ -1,61 +1,52 @@
-import React from "react";
+import React, {useState} from "react";
 import ContextData from "../../context/data/contextData";
-
-import {useAuth0} from "@auth0/auth0-react";
-import Navbar from "../../modules/navigation/nvabar";
-import Header from "../../modules/navigation/header";
-import NewItem from "../shop/modules/newitem";
 import classes from "./../../style.module.css";
+import {useAuth0} from "@auth0/auth0-react";
+import {Redirect} from "react-router-dom";
 
-const News=()=>{
 
-    const {stateData, dispatchData} = React.useContext(ContextData)
-    const news=stateData.news;
+const General=()=>{
+    const [login,setLogin]=useState()
+    const{loginWithPopup,loginWithRedirect, logout,user, isAuthenticated}=useAuth0()
+    function func() {
 
-    React.useEffect(()=>{
-        const fetchNews= async ()=>{
-            try{
-                const response=await fetch('http://127.0.0.1:8000/api/products')
-                if (response.status===200){
-                    const result= await   response.json()
-                    dispatchData({
-                        type:"FETCH_NEWS",
-                        payload: result
-                    })
-                }
-            } catch (e) {
-                console.log(e)
-            }
-        }
-        fetchNews()
-    },[])
+        loginWithRedirect();
 
 
 
+
+    }
+    function func1() {
+
+        localStorage.setItem("token", '0')
+
+
+
+    }
+
+    const token=localStorage.getItem("token")
     return(
-        <div>
-            <div className={classes.main}>
-                <div className={classes.navigation}>
-                    <Navbar />
 
-                </div>
-                <div className={classes.content}>
-                    <Header />
-                    {news.map((elem,index)=>{
-                            return(
+        <div className={classes.test1}>
+        <div> qwesd</div>
+        <button  onClick={func }> CLICK </button>
+        <button onClick={ (e) => {
+        logout() ;
+        func1();
+    }}> exit </button>
+    <h3>user is {isAuthenticated ? (  localStorage.setItem("token", user.name),'logged', <Redirect to={'/shop'}/>):'notloggoed'}</h3>
+    {isAuthenticated &&(
+    <pre style={{textAlign:'start'}}>
+        {JSON.stringify(user,null,2)}
 
-                                <NewItem data={elem} key ={index} />
+        {token}
+    </pre>
 
-                            )
 
-                        }
+    )}
+    </div>
 
-                    )}
-
-                </div>
-
-            </div></div>
     )
 
-}
-export default News
+    }
+    export default General

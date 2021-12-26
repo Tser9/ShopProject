@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 
 
 const Buying=()=> {
+    const [login,setLogin]=useState()
     const [items, setItems] = useState([]);
     const handleSubmit = (e) => {
 
@@ -45,6 +46,7 @@ const Buying=()=> {
 
     return (
         <div >
+
         <div className={classes.main}>
         <div className={classes.navigation}>
         <Navbar/>
@@ -70,8 +72,8 @@ const Buying=()=> {
         </div>
 
         </div>
-
-        </div>
+    {login}
+</div>
 )
 
 
