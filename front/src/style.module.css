@@ -8,18 +8,46 @@
 }
 
 .test1{
-
+    background-color: lightblue;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding : 16.8%;
+
 }
+
+.test1 .user {
+    text-align: left;
+    font-size: 24px;
+    font-weight:700;
+}
+
 .test1 .but1{
-height: 100px;
-    width: 500px;
+    margin: 10px 20px 50px 100px;
+    height: 90px;
+    width: 245px;
+    background-color: #4CAF50;
+    border: 4mm ridge rgba(50, 170, 220, .6);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 .test1 .but2{
-    height: 100px;
-    width: 500px;
+    margin: 10px 20px 50px 100px;
+    height: 30px;
+    width: 150px;
+    background-color: darkred;
+    border: 4mm ridge rgba(170, 50, 220, .6);;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 .news{
 margin: 10px;

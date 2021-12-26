@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ContextData from "../../context/data/contextData";
 import classes from "./../../style.module.css";
 import {useAuth0} from "@auth0/auth0-react";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 
 const Auth=()=>{
@@ -27,22 +27,30 @@ const Auth=()=>{
     return(
 
         <div className={classes.test1}>
-            {isAuthenticated ?( <button onClick={ (e) => {
-                    logout() ;
-                    func1();
-                }}> exit </button>)
-             :     <Redirect to={'/'}/>   }
+            {isAuthenticated ?
+                    ( <button onClick={ (e) => { logout(); func1(); }}> exit </button>)
+             :
 
-
-
+            <Redirect to={'/'}/>   }
             {isAuthenticated &&(
+            <div className={classes.user}>
                 <pre style={{textAlign:'start'}}>
+            < img src="https://grilliato-nsk.ru/upload/green-check.png" alt="Название изображения"/>
+                <div >{user.given_name}, Вы выполнили вход в систему</div>
+            <br></br>
+            <div >Теперь вам доступа <Link to="/cart">корзина</Link></div>
+            <br></br>
+            <br></br>
+            <div >Ваши данные: </div>
+            <br></br>
+              <div>Имя : {user.given_name}</div>
+               <div>Фамилия : {user.family_name}</div>
+            <div >Псевдоним : {user.nickname}</div>
+            <br></br>
 
-              <div>  Имя : {user.given_name}</div>
-               <div> Фамилие : {user.family_name}</div>
-                     <div> Псевдоним : {user.nickname}</div>
-                  <img src={"https://lh3.googleusercontent.com/a/AATXAJzxcssSLxfYwWQp_nwUQ0YuBKkd7TxCtJrEceQX=s96-c"}  />
+
                 </pre>
+            </div>
 
 
             )}

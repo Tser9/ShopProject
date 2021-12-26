@@ -32,7 +32,7 @@ const General=()=>{
 
         <Link to={"/shop"} className={classes.but2} onClick={ (e) => {
 
-    }}> Назад у меню </Link>
+    }}> Назад в меню </Link>
     <h3>{isAuthenticated ? (  localStorage.setItem("token", user.name), <Redirect to={'/shop'}/>):''}</h3>
     {isAuthenticated &&(
     <pre style={{textAlign:'start'}}>
