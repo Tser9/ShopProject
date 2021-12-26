@@ -29,6 +29,7 @@ const Navbar = () =>{
         <div>
         <Link to="/comments"> Отзывы</Link>
         </div>
+            <Link to="/aboutus"> О нас</Link>
         <Modal active={modalActive} setActive={serModalActive}/>
     </div>
 

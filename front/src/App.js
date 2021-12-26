@@ -12,6 +12,7 @@ import Auth from "./routes/auth/authpage";
 import Buying from "./routes/buying/buying";
 import Comments from "./routes/comments/comments";
 import ReducerThreeData from "./context/data/redthree";
+import aboutus from "./routes/aboutus/aboutus";
 
 function App() {
 
@@ -29,7 +30,7 @@ const [login,setLogin]=useState()
     <Route path="/auth" component={Auth}/>
     <Route path="/" exact component={General}/>
     <Route path="/buying" component={Buying}/>
-
+    <Route path="/aboutus" component={aboutus}/>
     </ContextData.Provider>
 
     <Route path="/cart" component={cart}/>
