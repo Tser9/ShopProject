@@ -31,7 +31,7 @@ const Auth=()=>{
                     logout() ;
                     func1();
                 }}> exit </button>)
-             :     <Redirect to={'/shop'}/>   }
+             :     <Redirect to={'/'}/>   }
 
 
 
