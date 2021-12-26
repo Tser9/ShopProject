@@ -78,7 +78,7 @@ const Comments=()=>{
         <input type="text" value1={value1} onChange={event => setValue1(event.target.value)}/>
     </dev>
     </form>
-    <div className={classes.button2} onClick={handleSubmit}> Отправить комментарий</div>
+    <div className={classes.button2} onClick={handleSubmit}>Отправить комментарий</div>
     </div>
     </div>
 

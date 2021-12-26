@@ -10,11 +10,20 @@ const Navbar = () =>{
     const [modalActive, serModalActive]=useState(false)
     return (
         <div className={classes.navigation}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div>
-        <Link to="/buying"> Покупка</Link>
+            <Link to="/buying"> Покупка</Link>
         </div>
         <div>
-
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div className={classes.text11} onClick={()=>token==='0' ? (
         console.log(123123),
             serModalActive(true)
@@ -23,14 +32,29 @@ const Navbar = () =>{
     )
 }  >Корзина</div>
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <div>
     <Link to="/shop"> Магазин</Link>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div>
         <Link to="/comments"> Отзывы</Link>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
             <Link to="/aboutus"> О нас</Link>
-        <Modal active={modalActive} setActive={serModalActive}/>
+        <Modal active={modalActive} setActiААve={serModalActive}/>
     </div>
 
 );

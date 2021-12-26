@@ -9,6 +9,7 @@
 }
 
 .header .token{
+    margin-top: -1%;
     font-weight:700;
     font-size: 20px;
     padding: 10px;
@@ -16,7 +17,7 @@
     background: cadetblue;
     float:bottom;
     display: inline;
-    margin: 20px 10px 30px 10px;
+    //margin: 20px 10px 30px 10px;
 }
 .header .name{
     font-weight:700;
@@ -29,10 +30,12 @@
     margin: 20px 10px 30px 10px;
 }
 .header .login{
+    text-align: left;
     background-size: 80px;
+    margin-top: -2%;
     margin-left: 90%;
-    margin-right: 7%;
-    background: cadetblue;
+    margin-right: 6.5%;
+    background: lightsteelblue;
 
 }
 .header .login .textLogin {
@@ -49,7 +52,7 @@
 .navigation .text11{
     text-decoration: none;
     font-weight:700;
-    font-size: 20px;
+    font-size: 35px;
     color: white;
 }
 .navigation a{
@@ -57,7 +60,7 @@
     padding: 10px;
     text-decoration: none;
     font-weight:700;
-    font-size: 20px;
+    font-size: 35px;
     color: white;
   }
 

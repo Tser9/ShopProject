@@ -13,10 +13,22 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding : 16.8%;
+    height:100vh;
 
 }
-
+.test1 .knopka {
+    margin: 10px 20px 50px 100px;
+    height: 90px;
+    width: 245px;
+    background-color: #4CAF50;
+    border: 4mm ridge rgba(50, 170, 220, .6);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 .test1 .user {
     text-align: left;
     font-size: 24px;
@@ -97,7 +109,7 @@ margin: 10px;
     display:flex;
     padding: 10px;
     background: #61dafb;
-    width: 100%;
+    width: 97%;
     text-align: left;
     border-radius: 5px;
 }
@@ -124,6 +136,12 @@ text-align: center;
 
     width:80%;
   }
+.main .content .about{
+    text-align: left;
+    font-size: 24px;
+    font-weight:500;
+    padding-left: 20px;
+}
 
  .buy{
     padding: 0.5%; /* Поля */
@@ -137,10 +155,10 @@ text-align: center;
     margin-top: 0px;
     background: indianred;
     float:bottom;
-    margin-left: 200px;
-    width: 100px;
+    margin-left: 100px;
+    width: 220px;
     text-align: center;
-    height: 25px;
+    height: 30px;
     border-radius: 5px; /* Радиус скругления */
 }
 .main .content .Forms{

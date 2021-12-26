@@ -27,11 +27,7 @@ const Auth=()=>{
     return(
 
         <div className={classes.test1}>
-            {isAuthenticated ?
-                    ( <button onClick={ (e) => { logout(); func1(); }}> exit </button>)
-             :
 
-            <Redirect to={'/'}/>   }
             {isAuthenticated &&(
             <div className={classes.user}>
                 <pre style={{textAlign:'start'}}>
@@ -47,7 +43,11 @@ const Auth=()=>{
                <div>Фамилия : {user.family_name}</div>
             <div >Псевдоним : {user.nickname}</div>
             <br></br>
+    {isAuthenticated ?
+        ( <button styles={{ backgroundColor: "#44014C", width: "300px", minHeight: "200px"}} onClick={ (e) => { logout(); func1(); }}> exit </button>)
+    :
 
+    <Redirect to={'/'}/>   }
 
                 </pre>
             </div>
@@ -59,4 +59,4 @@ const Auth=()=>{
     )
 
 }
-export default Auth
+    export default Auth
