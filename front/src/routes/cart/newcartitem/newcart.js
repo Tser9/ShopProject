@@ -14,13 +14,12 @@ const NewCart = ({data}) => {
 
         }).then(()=>{
             window.location.reload();
-            console.log(JSON.stringify(data.id))
+
         })
 
 
     }
-    console.log(arr[1])
-    console.log(arr.length)
+
     return (
 
         <div className={classes.news} >

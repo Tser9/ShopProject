@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import {Route, Routes, Switch} from "react-router-dom";
 import Shop from "./routes/shop/shop";
@@ -18,6 +18,7 @@ function App() {
     const [stateData, dispatchData,arr]=React.useReducer(ReducerData, StateData)
     const [stateDataTwo, dispatchDataTwo]=React.useReducer(ReducerTwoData, StateData)
     const [stateDataThree, dispatchDataThree]=React.useReducer(ReducerThreeData, StateData)
+const [login,setLogin]=useState()
     return (
 
         <Switch>
@@ -36,6 +37,7 @@ function App() {
     <Route path="/comments" component={Comments}/>
     </ContextData.Provider>
     </Switch>
+
 
 
 );

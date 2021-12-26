@@ -1,6 +1,10 @@
 const StateData = {
+
     news: [],
     shop:[],
+
+
+
     comments:[],
     courses:[]
 }
