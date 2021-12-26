@@ -1,19 +1,45 @@
 
 
 .header{
-  background: cadetblue;
-  text-decoration: none;
-  font-weight:700;
-  font-size: 20px;
-  padding: 10px;
-display: flex;
+    background: cadetblue;
+    text-decoration: none;
+    width: 100%;
+    height: 70px;
+    display: inline-block;
+}
 
+.header .token{
+    font-weight:700;
+    font-size: 20px;
+    padding: 10px;
+    background-size: 80px;
+    background: cadetblue;
+    float:bottom;
+    display: inline;
+    margin: 20px 10px 30px 10px;
+}
+.header .name{
+    font-weight:700;
+    font-size: 20px;
+    padding: 10px;
+    background-size: 80px;
+    background: cadetblue;
+    float:bottom;
+    display: inline;
+    margin: 20px 10px 30px 10px;
 }
 .header .login{
-background-size: 80px;
-margin-left: 80%;
-    background: yellow;
+    background-size: 80px;
+    margin-left: 90%;
+    margin-right: 7%;
+    background: cadetblue;
 
+}
+.header .login .textLogin {
+    text-decoration: none;
+    font-weight:700;
+    font-size: 20px;
+    color: darkblue;
 }
 .navigation{
 

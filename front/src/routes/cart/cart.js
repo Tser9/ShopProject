@@ -45,6 +45,7 @@ const cart=()=>{
                 </div>
                 <div className={classes.content}>
                     <Header />
+                    <div className={classes.product}>
                     {shop.map((elem,index)=>{
                             return(
 
@@ -55,7 +56,10 @@ const cart=()=>{
                         }
 
                     )}
-                   <Link  className={classes.buy} to={"/buying"} > Покупка</Link>
+        </div>
+        <div className={classes.buy}>
+                   <Link to={"/buying"} > Покупка</Link>
+        </div>
                 </div>
 
             </div></div>
