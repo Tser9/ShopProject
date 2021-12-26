@@ -13,7 +13,7 @@ const NewItem = ({data}) => {
 
         }).then(()=>{
 
-            console.log(JSON.stringify(data))
+
         })
 
 
@@ -24,15 +24,15 @@ const NewItem = ({data}) => {
 
         <div className={classes.news} >
 
-                <img className={classes.picture} src={data.image}/>
+        <img className={classes.picture} src={data.image}/>
 
-            <div><Link to="/courses">
-                <div className={classes.text3}>{data.title} </div></Link>
-                <div>{data.description} </div>
-                <div className={classes.button} onClick={handleSubmit}> Добавить в корзину </div>
-            </div>
-        </div>
-    )
+    <div><Link to="/courses">
+        <div className={classes.text3}>{data.title} </div></Link>
+    <div>{data.description} </div>
+    <div className={classes.button} onClick={handleSubmit}> Добавить в корзину </div>
+    </div>
+    </div>
+)
 }
 export default NewItem
 
