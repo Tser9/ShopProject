@@ -1,4 +1,18 @@
 
+.test1{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.test1 .but1{
+height: 100px;
+    width: 500px;
+}
+.test1 .but2{
+    height: 100px;
+    width: 500px;
+}
 .news{
 margin: 10px;
     display:flex;

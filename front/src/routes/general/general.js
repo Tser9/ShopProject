@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ContextData from "../../context/data/contextData";
 import classes from "./../../style.module.css";
 import {useAuth0} from "@auth0/auth0-react";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 
 const General=()=>{
@@ -21,20 +21,19 @@ const General=()=>{
         localStorage.setItem("token", '0')
 
 
-
     }
 
     const token=localStorage.getItem("token")
     return(
 
         <div className={classes.test1}>
-        <div> qwesd</div>
-        <button  onClick={func }> CLICK </button>
-        <button onClick={ (e) => {
-        logout() ;
-        func1();
-    }}> exit </button>
-    <h3>user is {isAuthenticated ? (  localStorage.setItem("token", user.name),'logged', <Redirect to={'/shop'}/>):'notloggoed'}</h3>
+
+        <button className={classes.but1}  onClick={func }> LogIn </button>
+
+        <Link to={"/shop"} className={classes.but2} onClick={ (e) => {
+
+    }}> Назад у меню </Link>
+    <h3>{isAuthenticated ? (  localStorage.setItem("token", user.name), <Redirect to={'/shop'}/>):''}</h3>
     {isAuthenticated &&(
     <pre style={{textAlign:'start'}}>
         {JSON.stringify(user,null,2)}

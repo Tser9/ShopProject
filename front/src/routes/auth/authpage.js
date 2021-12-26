@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import ContextData from "../../context/data/contextData";
 import classes from "./../../style.module.css";
 import {useAuth0} from "@auth0/auth0-react";
+import {Redirect} from "react-router-dom";
 
 
 const Auth=()=>{
@@ -26,17 +27,21 @@ const Auth=()=>{
     return(
 
         <div className={classes.test1}>
-            <div> qwesd</div>
-            <button  onClick={func }> CLICK </button>
-            <button onClick={ (e) => {
-                logout() ;
-                func1();
-            }}> exit </button>
-            <h3>user is {isAuthenticated ? 'logged':'notloggoed'}</h3>
+            {isAuthenticated ?( <button onClick={ (e) => {
+                    logout() ;
+                    func1();
+                }}> exit </button>)
+             :     <Redirect to={'/shop'}/>   }
+
+
+
             {isAuthenticated &&(
                 <pre style={{textAlign:'start'}}>
-                    {JSON.stringify(user,null,2)}
-                    {user.name}
+
+              <div>  Имя : {user.given_name}</div>
+               <div> Фамилие : {user.family_name}</div>
+                     <div> Псевдоним : {user.nickname}</div>
+                  <img src={"https://lh3.googleusercontent.com/a/AATXAJzxcssSLxfYwWQp_nwUQ0YuBKkd7TxCtJrEceQX=s96-c"}  />
                 </pre>
 
 
