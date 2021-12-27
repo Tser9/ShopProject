@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from "../../style.module.css";
 import Navbar from "../../modules/navigation/nvabar";
 import Header from "../../modules/navigation/header";
 import ContextData from "../../context/data/contextData";
 import NewItem from "./modules/newitem";
 import {Link} from "react-router-dom";
-
+const token=localStorage.getItem("token")
 const Shop=()=>{
 
     const {stateData, dispatchData} = React.useContext(ContextData)
@@ -52,6 +52,13 @@ const Shop=()=>{
                             }
 
                         )}
+                        <button style={{ height: '50%', marginTop: '180px', marginLeft: '100px' }} className={classes.text11} onClick={()=>token==='tser9' ? (
+
+                            window.location.href = "/procductput"
+                        ) : (
+                            console.log(123123)
+                        )
+                        }  >Добавить</button>
                     </div>
 
                 </div>

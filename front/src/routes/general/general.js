@@ -9,18 +9,10 @@ const General=()=>{
     const [login,setLogin]=useState()
     const{loginWithPopup,loginWithRedirect, logout,user, isAuthenticated}=useAuth0()
     function func() {
-
         loginWithRedirect();
-
-
-
-
     }
     function func1() {
-
         localStorage.setItem("token", '0')
-
-
     }
 
     const token=localStorage.getItem("token")
@@ -28,7 +20,7 @@ const General=()=>{
 
         <div className={classes.test1}>
 
-        <button className={classes.but1}  onClick={func }> LogIn </button>
+        <button style={{cursor:'pointer'}} className={classes.but1}  onClick={func }> LogIn </button>
 
         <Link to={"/shop"} className={classes.but2} onClick={ (e) => {
 

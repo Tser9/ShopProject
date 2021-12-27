@@ -24,7 +24,7 @@ const Navbar = () =>{
         <br></br>
         <br></br>
         <br></br>
-        <div className={classes.text11} onClick={()=>token==='0' ? (
+        <div style={{cursor:'pointer'}} className={classes.text11} onClick={()=>token==='0' ? (
         console.log(123123),
             serModalActive(true)
     ) : (
@@ -54,7 +54,7 @@ const Navbar = () =>{
         <br></br>
         <br></br>
             <Link to="/aboutus"> О нас</Link>
-        <Modal active={modalActive} setActiААve={serModalActive}/>
+        <Modal active={modalActive} setActive={serModalActive}/>
     </div>
 
 );

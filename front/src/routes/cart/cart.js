@@ -5,7 +5,7 @@ import Header from "../../modules/navigation/header";
 import ContextData from "../../context/data/contextData";
 import NewCart from "./newcartitem/newcart";
 import NewItem from "../shop/modules/newitem";
-import {Link, useHistory} from "react-router-dom";
+import {Link, Redirect, useHistory} from "react-router-dom";
 import Courses from "../buying/buying";
 import Destroy from "../buying/vsevse";
 
@@ -33,9 +33,17 @@ const cart=()=>{
         }
         fetchShop()
     },[])
+    function BoilingVerdict(elem,index) {
+        // eslint-disable-next-line no-unused-expressions
+        localStorage.setItem("token1", elem.user_id),console.log(token1)
+        if(token1==='2'){ }
+        else { console.log(123123)}
 
 
 
+    }
+
+    const token1=localStorage.getItem("token1")
     return(
         <div>
             <div className={classes.main}>
@@ -46,14 +54,20 @@ const cart=()=>{
                 <div className={classes.content}>
                     <Header />
                     <div className={classes.product}>
-                    {shop.map((elem,index)=>{
-                            return(
 
-                                <NewCart data={elem} key ={index} />
+                        {shop.map((elem,index)=>{return( <NewCart data={elem} key ={index} />)
 
-                            )
 
-                        }
+
+
+
+                            }
+
+
+
+
+
+
 
                     )}
         </div>

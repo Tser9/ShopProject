@@ -13,6 +13,7 @@ import Buying from "./routes/buying/buying";
 import Comments from "./routes/comments/comments";
 import ReducerThreeData from "./context/data/redthree";
 import aboutus from "./routes/aboutus/aboutus";
+import Productput from "./routes/productput/productput";
 
 function App() {
 
@@ -27,6 +28,7 @@ const [login,setLogin]=useState()
 <ContextData.Provider value={{stateDataTwo, dispatchDataTwo}}>
 <ContextData.Provider value={{stateData, dispatchData,arr}}>
 <Route path="/shop" component={Shop}/>
+    <Route path="/procductput" component={Productput}/>
     <Route path="/auth" component={Auth}/>
     <Route path="/" exact component={General}/>
     <Route path="/buying" component={Buying}/>

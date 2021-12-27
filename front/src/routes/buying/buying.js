@@ -68,7 +68,7 @@ const Buying=()=> {
         <input type="text" name="name"/>
         </dev>
         </form>
-        <div className={classes.button2} onClick={handleSubmit}> Оплатить</div>
+        <div style={{cursor:'pointer'}} className={classes.button2} onClick={handleSubmit}> Оплатить</div>
         </div>
 
         </div>

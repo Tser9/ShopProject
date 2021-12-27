@@ -23,7 +23,6 @@ const NewCart = ({data}) => {
     return (
 
         <div className={classes.news} >
-
             <img className={classes.picture} src={data.image}/>
 
             <div>

@@ -2,8 +2,9 @@ import React from "react";
 import classes from "./../../../style.module.css";
 import {Link} from "react-router-dom";
 import axios, {Axios} from "axios";
-
+const token=localStorage.getItem("token")
 const NewItem = ({data}) => {
+
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://127.0.0.1:8000/api/cart',{
@@ -11,8 +12,22 @@ const NewItem = ({data}) => {
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(data)
 
-        }).then(()=>{
+        }).then(()=>{console.log(data)
 
+
+        })
+
+    }
+
+    const handle = (e) => {
+        e.preventDefault();
+        fetch('http://127.0.0.1:8000/api/products/'+data.id,{
+            method: 'DELETE',
+            headers:{"Content-Type":"application/json"},
+
+
+        }).then(()=>{
+            window.location.reload();
 
         })
 
@@ -26,10 +41,16 @@ const NewItem = ({data}) => {
 
         <img className={classes.picture} src={data.image}/>
 
-    <div><Link to="/courses">
-        <div className={classes.text3}>{data.title} </div></Link>
+    <div>
+        <div className={classes.text3}>{data.title} </div>
     <div>{data.description} </div>
-    <div className={classes.button} onClick={handleSubmit}> Добавить в корзину </div>
+    <div style={{cursor:'pointer'}} className={classes.button} onClick={handleSubmit}> Добавить в корзину </div>
+        <div onClick={()=>token==='tser9' ? (console.log(JSON.stringify(data.id)),
+            handle
+        ) : (
+            console.log(123123)
+        )
+        } style={{cursor:'pointer'}} className={classes.button1} > Удалить </div>
     </div>
     </div>
 )

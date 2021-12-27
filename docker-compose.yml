@@ -1,0 +1,29 @@
+version: '3'
+services:
+  frontend:
+    build: ./front
+    ports:
+      - "3000:3000"
+    container_name: frontend-docker
+    restart: always
+    links:
+      - back
+  backend:
+    build: ./back
+    ports:
+      - "8080:8080"
+    container_name: backend-docker
+    restart: always
+    links:
+      - db
+  db:
+    image: mysql:latest
+    ports:
+      - "5432:5432"
+    container_name: database-docker
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'

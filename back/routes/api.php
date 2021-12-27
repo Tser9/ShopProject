@@ -54,3 +54,29 @@ Route::post('comments','CommentsController@store');
 Route::put('comments/{comment}','CommentsController@update');
 
 Route::delete('comments/{comment}', 'CommentsController@delete');
+
+
+
+Route::get('user_has', 'UserHasController@index');
+
+Route::get('user_has/{user_has}', 'UserHasController@show');
+
+Route::post('user_has','UserHasController@store');
+
+Route::put('user_has/{user_has}','UserHasController@update');
+
+Route::delete('user_has/{user_has}', 'UserHasController@delete');
+
+
+
+Route::get('user_table', 'UserTableController@index');
+
+Route::get('user_table/{user_table}', 'UserTableController@show');
+
+Route::post('user_table','UserTableController@store');
+
+Route::put('user_table/{user_table}','UserTableController@update');
+
+Route::delete('user_table/{user_table}', 'UserTableController@delete');
+
+

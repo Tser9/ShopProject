@@ -6,22 +6,23 @@ import ContextData from "../../context/data/contextData";
 import {Link, useHistory} from "react-router-dom";
 
 import CommentItem from "./modules/commentItem";
+import Modal from "../../modules/navigation/modal";
+const token=localStorage.getItem("token")
 
-
-const Comments=()=>{
+const Comments=()=>{   const [modalActive, serModalActive]=useState(false)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const {stateDataThree, dispatchDataThree} = React.useContext(ContextData)
     const comments=stateDataThree.comments;
     const [value,setValue] =useState()
     const [value1,setValue1] =useState()
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();console.log(token);console.log(value1);
         fetch('http://127.0.0.1:8000/api/comments',{
             method: 'POST',
             headers:{"Content-Type":"application/json"},
-            body: JSON.stringify({"comment_id": '',"fio":value,"feedback":value1})
+            body: JSON.stringify({"comment_id": '',"fio":token,"feedback":value1})
 
-        }).then(()=>{
+        }).then(()=>{    window.location.reload();
         })
 
 
@@ -69,20 +70,23 @@ const Comments=()=>{
             )}
         <div className={classes.content}>
         <form className={classes.Forms}>
-        <dev style={{marginTop: "10px"}}>
-    Автор:
-        <input type="text" value={value} onChange={event => setValue(event.target.value)}/>
-    </dev>
+
     <dev style={{marginTop: "10px"}}>
     Комментарий:
         <input type="text" value1={value1} onChange={event => setValue1(event.target.value)}/>
     </dev>
     </form>
-    <div className={classes.button2} onClick={handleSubmit}>Отправить комментарий</div>
+    <div style={{cursor:'pointer'}} className={classes.button2} onClick={()=>token==='0' ? (
+
+            serModalActive(true)
+    ) : (
+        handleSubmit()
+    )
+    }  >Отправить комментарий</div>
     </div>
     </div>
 
-    </div></div>
+    </div> <Modal active={modalActive} setActive={serModalActive}/></div>
 )
 
 }

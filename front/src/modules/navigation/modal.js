@@ -4,7 +4,6 @@ const Modal=({active,setActive})=>{
     return(
         <div className={active ? "modal active":'modal'} onClick={()=>setActive(false)}>
             <div className="modal_content" onClick={e=>e.stopPropagation()}>
-
                 Вы не авторизованы, корзина недоступна
             </div>
 
