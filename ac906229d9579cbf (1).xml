@@ -1,0 +1,141 @@
+<ISSPECS>
+	<DESCRIPTION>
+		<TITLE>e-jurnal</TITLE>
+		<SUBJ>Электронный журнал</SUBJ>
+	</DESCRIPTION>
+	<DATA>
+		<ENTITY ent_id="User">
+			<PROPERTY>id_user</PROPERTY>
+			<PROPERTY>fio</PROPERTY>
+			<PROPERTY>isteacher</PROPERTY>
+			<PROPERTY>role</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="Class">
+			<PROPERTY>id_class</PROPERTY>
+			<PROPERTY>class_name</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="User_has_Class">
+			<PROPERTY>User_id_user</PROPERTY>
+			<PROPERTY>Class_id_class</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="Subject">
+			<PROPERTY>id_subject</PROPERTY>
+			<PROPERTY>subject_name</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="User_has_Subject">
+			<PROPERTY>User_id_user</PROPERTY>
+			<PROPERTY>Subject_id_subject</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="Lesson">
+			<PROPERTY>id_lesson</PROPERTY>
+			<PROPERTY>date</PROPERTY>
+			<PROPERTY>Subject_id_subject</PROPERTY>
+			<PROPERTY>Class_id_class</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="Mark">
+			<PROPERTY>id_mark</PROPERTY>
+			<PROPERTY>mark</PROPERTY>
+			<PROPERTY>User_id_user</PROPERTY>
+			<PROPERTY>Lesson_id_lesson</PROPERTY>
+		</ENTITY>
+		
+	
+		<RELATIONSHIPS ent_ids = "User User_has_Class Class">
+			<PROPERTY>MANY TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "User User_has_Subject Subject">
+			<PROPERTY>MANY TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "Subject Lesson">
+			<PROPERTY>ONE TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "Class Lesson">
+			<PROPERTY>ONE TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "User Marks">
+			<PROPERTY>ONE TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "Lesson Marks">
+			<PROPERTY>ONE TO ONE</PROPERTY>
+		</RELATIONSHIPS>
+		
+		
+		<CONSTRAINT> User: id_user: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
+		<CONSTRAINT> User: : fio: VARCHAR(64), not null; </CONSTRAINT>
+		<CONSTRAINT> User: isteacher: TINYINT;
+</CONSTRAINT>
+		<CONSTRAINT> User_has_Class: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`); </CONSTRAINT>
+		<CONSTRAINT> User_has_Class: Class_id_class: INT, primary key, not null, foreign key (referenced table `Class` column `id_class`);
+ </CONSTRAINT>
+		<CONSTRAINT> Class: id_class: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
+		<CONSTRAINT> Class: class_name: VARCHAR(32), not null; </CONSTRAINT>
+		<CONSTRAINT> User_has_Subject: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`);
+ </CONSTRAINT>
+		<CONSTRAINT> User_has_Subject: Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`);
+ </CONSTRAINT>
+		<CONSTRAINT> Subject: id_subject:  INT, primary key, not null, unique index, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> Subject: subject_name: VARCHAR(32), not null; </CONSTRAINT>
+		<CONSTRAINT> Marks: id_mark: INT, primary key, not null, unique index, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> Marks: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`);
+</CONSTRAINT>
+		<CONSTRAINT> Marks: mark: CHAR(1);
+</CONSTRAINT>
+		<CONSTRAINT> Marks: Lesson_id_lesson: INT, primary key, not null, foreign key (referenced table `Lesson` column `id_lesson`);
+</CONSTRAINT>
+		<CONSTRAINT> Lesson: id_lesson: INT, primary key, not null, unique index, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> Lesson: date: DATE, not null;
+ </CONSTRAINT>
+		<CONSTRAINT> Class_id_class: INT, primary key, not null, foreign key (referenced table `Class` column `id_class`) </CONSTRAINT>
+		<CONSTRAINT> Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`);
+ </CONSTRAINT>
+
+
+	</DATA>
+	<ROLES>
+		<ROLE>
+			<TITLE>STUDENT</TITLE>
+			<RESPOSIBILITY>Вход на сайт</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Выбор предмета и класса для просмотра оценок</RESPOSIBILITY>
+			<TOTALUSERS>NOT LIMITED</TOTALUSERS>
+		</ROLE>
+		<ROLE>
+			<TITLE>TEACHER</TITLE>
+			<RESPOSIBILITY>Вход на сайт</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Выбор предмета и класса для просмотра оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Выставление оценок</RESPOSIBILITY>
+			<TOTALUSERS>NOT LIMITED</TOTALUSERS>
+		</ROLE>
+		<ROLE>
+			<TITLE>ADMIN</TITLE>
+			<RESPOSIBILITY>Вход на сайт</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Выбор предмета и класса для просмотра оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Выставление оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Удаление оценок</RESPOSIBILITY>
+			<RESPOSIBILITY>Добавление и удаление учителей и учеников</RESPOSIBILITY>
+			<TOTALUSERS>NOT LIMITED</TOTALUSERS>
+		</ROLE>
+			
+	</ROLES>
+	<TECHSPEC>
+		<TYPE>Web-side</TYPE>
+		<DEVTOOLS>
+			<DEV>JavaScript</DEV>
+			<DEV>NodeJS</DEV>
+			<DEV>ReactJS</DEV>
+			<DEV>Laravel</DEV>
+		</DEVTOOLS>
+		<DBMS>
+			<TITLE>MySQL</TITLE>
+			<VERSION>8.0.26</VERSION>
+			<REASONING>Знакомый и простой язык SQL</REASONING>
+			<REASONING>Удобная среда разработки - MySQL workbench</REASONING>
+			<REASONING>Наличие подробной документации и материалов в открытом доступе</REASONING>
+		</DBMS>
+	</TECHSPEC>
+</ISSPECS>

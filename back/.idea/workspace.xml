@@ -2,119 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="120089d6-a2a0-447f-b27b-a9e6871f744a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/my-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Controllers/CartController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Controllers/CommentsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Controllers/ProductsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Models/Cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Models/Comment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Models/Product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/broadcasting.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/hashing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/sanctum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/config/view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2021_12_15_195948_create_products_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2021_12_21_203808_create_carts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/migrations/2021_12_25_201815_create_comments_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/seeders/CartTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/database/seeders/ProductsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/public/web.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qwe/webpack.mix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../front/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/modules/navigation/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/modules/navigation/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/modules/navigation/nvabar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/modules/navigation/nvabar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/auth/authpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/auth/authpage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/buying/buying.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/buying/buying.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/cart/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/cart/newcartitem/newcart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/cart/newcartitem/newcart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/comments/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/comments/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/general/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/general/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/shop/modules/newitem.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/shop/modules/newitem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/routes/shop/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routes/shop/shop.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +180,7 @@
       <workItem from="1640467058159" duration="1980000" />
       <workItem from="1640545941639" duration="2442000" />
       <workItem from="1640562442525" duration="60000" />
-      <workItem from="1640563602806" duration="4328000" />
+      <workItem from="1640563602806" duration="5762000" />
     </task>
     <servers />
   </component>
