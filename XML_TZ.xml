@@ -1,0 +1,120 @@
+﻿<ISSPECS>
+	<DESCRIPTION>
+		<TITLE>Магазин "Вкусно"</TITLE>
+		<SUBJ>Веб-сайт магазина</SUBJ>
+	</DESCRIPTION>
+	<DATA>
+		<ENTITY ent_id="users">
+			<PROPERTY>id</PROPERTY>
+			<PROPERTY>fio</PROPERTY>
+			<PROPERTY>email</PROPERTY>
+			<PROPERTY>password</PROPERTY>
+			<PROPERTY>role</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="products">
+			<PROPERTY>id</PROPERTY>
+			<PROPERTY>title</PROPERTY>
+			<PROPERTY>description</PROPERTY>
+			<PROPERTY>image</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="cart">
+			<PROPERTY>id</PROPERTY>
+			<PROPERTY>title</PROPERTY>
+			<PROPERTY>description</PROPERTY>
+			<PROPERTY>image</PROPERTY>
+		</ENTITY>
+		<ENTITY ent_id="comments">
+			<PROPERTY>comment_id</PROPERTY>
+			<PROPERTY>fio</PROPERTY>
+			<PROPERTY>feedback</PROPERTY>
+		</ENTITY>
+		<RELATIONSHIPS ent_ids = "Users Cart">
+			<PROPERTY>ONE TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<RELATIONSHIPS ent_ids = "Users Comments">
+			<PROPERTY>ONE TO MANY</PROPERTY>
+		</RELATIONSHIPS>
+		<CONSTRAINT> User: id: INT, primary key, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> User: : fio: TEXT;
+ </CONSTRAINT>
+		<CONSTRAINT> User: email: TEXT;
+</CONSTRAINT>
+		<CONSTRAINT> User: password: TEXT;
+</CONSTRAINT>
+		<CONSTRAINT> User: role: TINYINT(1);
+</CONSTRAINT>
+		<CONSTRAINT> Products: id: INT, primary key, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> Products: title: VARCHAR(255);
+
+ </CONSTRAINT>
+		<CONSTRAINT> Products: description: VARCHAR(255);</CONSTRAINT>
+		<CONSTRAINT> Products: image: VARCHAR(255);
+ </CONSTRAINT>
+		<CONSTRAINT> Cart: id: INT, primary key, unsigned data type, auto incremental;
+ </CONSTRAINT>
+		<CONSTRAINT> Cart: title: VARCHAR(255);
+
+ </CONSTRAINT>
+		<CONSTRAINT> Cart: description: VARCHAR(255);</CONSTRAINT>
+		<CONSTRAINT> Cart: image: VARCHAR(255);
+ </CONSTRAINT>
+		<CONSTRAINT> Comments: id: INT, primary key, unsigned data type, auto incremental;
+
+ </CONSTRAINT>
+		<CONSTRAINT> Comments: fio: TEXT;
+
+ </CONSTRAINT>
+		<CONSTRAINT> Comments: feedback: TEXT;
+
+ </CONSTRAINT>
+		<CONSTRAINT> Comments: user_id: int, unsigned data type, foreign key (referenced table `users` column `id `);
+ </CONSTRAINT>
+	</DATA>
+	<ROLES>
+		<ROLE>
+			<TITLE>USER</TITLE>
+			<RESPOSIBILITY>Авторизация на сайте</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр продуктов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр отзывов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр информации о нас</RESPOSIBILITY>
+			<TOTALUSERS>NOT LIMITED</TOTALUSERS>
+		</ROLE>
+		<ROLE>
+			<TITLE>REGISTRATED_USER</TITLE>
+			<RESPOSIBILITY>Просмотр информации о себе</RESPOSIBILITY>
+			<RESPOSIBILITY>Добавление и удаление продуктов в корзине</RESPOSIBILITY>
+			<RESPOSIBILITY>Покупка продуктов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр и отправление отзывов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр информации о нас</RESPOSIBILITY>
+			<TOTALUSERS>NOT LIMITED</TOTALUSERS>
+		</ROLE>
+		<ROLE>
+			<TITLE>ADMIN</TITLE>
+			<RESPOSIBILITY>Просмотр информации о себе</RESPOSIBILITY>
+			<RESPOSIBILITY>Добавление и удаление продуктов в корзине</RESPOSIBILITY>
+			<RESPOSIBILITY>Покупка продуктов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр и отправление отзывов</RESPOSIBILITY>
+			<RESPOSIBILITY>Просмотр информации о нас</RESPOSIBILITY>
+			<RESPOSIBILITY>Удаление и добавление товаров в магазине</RESPOSIBILITY>
+			<TOTALUSERS>LIMITED</TOTALUSERS>
+		</ROLE>
+	</ROLES>
+	<TECHSPEC>
+		<TYPE>Web-side</TYPE>
+		<DEVTOOLS>
+			<DEV>JavaScript</DEV>
+			<DEV>NodeJS</DEV>
+			<DEV>ReactJS</DEV>
+			<DEV>Laravel</DEV>
+		</DEVTOOLS>
+		<DBMS>
+			<TITLE>MySQL</TITLE>
+			<VERSION>8.0.26</VERSION>
+			<REASONING>Знакомый и простой язык SQL</REASONING>
+			<REASONING>Удобная среда разработки - MySQL workbench</REASONING>
+			<REASONING>Наличие подробной документации и материалов в открытом доступе</REASONING>
+		</DBMS>
+	</TECHSPEC>
+</ISSPECS>
