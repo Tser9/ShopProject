@@ -76,6 +76,7 @@ CREATE TABLE `subject` (
 --
 
 CREATE TABLE `user_has_class` (
+  `id_user_has_class` INT UNSIGNED NOT NULL,
   `User_id_user` int UNSIGNED NOT NULL,
   `Class_id_class` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -87,6 +88,7 @@ CREATE TABLE `user_has_class` (
 --
 
 CREATE TABLE `user_has_subject` (
+  `id_user_has_subject` INT UNSIGNED NOT NULL,
   `User_id_user` int UNSIGNED NOT NULL,
   `Subject_id_subject` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -141,6 +143,7 @@ ALTER TABLE `subject`
 -- Индексы таблицы `user_has_class`
 --
 ALTER TABLE `user_has_class`
+  ADD PRIMARY KEY (`id_user_has_class`),
   ADD KEY `Class_id_class` (`Class_id_class`),
   ADD KEY `User_id_user` (`User_id_user`);
 
@@ -148,6 +151,7 @@ ALTER TABLE `user_has_class`
 -- Индексы таблицы `user_has_subject`
 --
 ALTER TABLE `user_has_subject`
+  ADD PRIMARY KEY (`id_user_has_subject`),
   ADD KEY `Subject_id_subject` (`Subject_id_subject`),
   ADD KEY `User_id_user` (`User_id_user`);
 
@@ -191,6 +195,18 @@ ALTER TABLE `subject`
 ALTER TABLE `user_people`
   MODIFY `id_user` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT для таблицы `user_has_subject`
+--
+ALTER TABLE `user_has_subject`
+  MODIFY `id_user_has_subject` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  
+--
+-- AUTO_INCREMENT для таблицы `user_has_subject`
+--
+ALTER TABLE `user_has_class`
+  MODIFY `id_user_has_class` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
