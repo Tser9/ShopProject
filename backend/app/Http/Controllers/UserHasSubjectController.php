@@ -13,9 +13,9 @@ class UserHasSubjectController extends Controller
         return UserHasSubject::all();
     }
 
-    public function show(UserHasSubject $user_has_subject)
+    public function show(UserHasSubject $id_user_has_subject)
     {
-        return ($user_has_subject);
+        return ($id_user_has_subject);
     }
 
     public function store(Request $request)
@@ -25,16 +25,16 @@ class UserHasSubjectController extends Controller
         return response()->json($user_has_subject, 201);
     }
 
-    public function update(Request $request, UserHasSubject $user_has_subject)
+    public function update(Request $request, UserHasSubject $id_user_has_subject)
     {
-        $user_has_subject->update($request->all());
+        $id_user_has_subject->update($request->all());
 
-        return response()->json($user_has_subject, 200);
+        return response()->json($id_user_has_subject, 200);
     }
 
-    public function delete(UserHasSubject $user_has_subject)
+    public function delete(UserHasSubject $id_user_has_subject)
     {
-        $user_has_subject->delete();
+        $id_user_has_subject->delete();
 
         return response()->json(null, 204);
     }

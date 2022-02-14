@@ -13,7 +13,7 @@ class CreateCampsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('camps', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('title');

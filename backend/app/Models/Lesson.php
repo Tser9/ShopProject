@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {protected $table = 'lesson';protected $primaryKey = 'id_lesson';
 public $timestamps = false;
-    protected $fillable= ['id_lesson', 'date', 'class_id_class','Subject_id_subject'];
+    protected $fillable= ['id_lesson', 'date', 'Class_id_class','Subject_id_subject'];
 }

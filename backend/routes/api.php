@@ -46,6 +46,9 @@ Route::put('class_class/{class_class}','IclassController@update');
 
 Route::delete('class_class/{class_class}', 'IclassController@delete');
 
+Route::get('camps', 'CampsController@index');
+Route::post('camps','CampsController@store');
+
 
 
 
@@ -58,7 +61,7 @@ Route::post('lesson','LessonController@store');
 
 Route::put('lesson/{lesson}','LessonController@update');
 
-Route::delete('lesson/{lesson', 'LessonController@delete');
+Route::delete('lesson/{lesson}', 'LessonController@delete');
 
 
 
@@ -79,13 +82,13 @@ Route::delete('marks/{marks}', 'MarkController@delete');
 
 Route::get('user_has_class', 'UserHasClassController@index');
 
-Route::get('user_has_class/{user_has_class}', 'UserHasClassController@show');
+Route::get('user_has_class/{id_user_class_class}', 'UserHasClassController@show');
 
 Route::post('user_has_class','UserHasClassController@store');
 
-Route::put('user_has_class/{user_has_class}','UserHasClassController@update');
+Route::put('user_has_class/{id_user_class_class}','UserHasClassController@update');
 
-Route::delete('user_has_class/{user_has_class}', 'UserHasClassController@delete');
+Route::delete('user_has_class/{id_user_class_class}', 'UserHasClassController@delete');
 
 
 
@@ -105,11 +108,11 @@ Route::delete('user_people/{user_people}', 'UserPeopleController@delete');
 
 Route::get('user_has_subject', 'UserHasSubjectController@index');
 
-Route::get('user_has_subject/{user_has_subject}', 'UserHasSubjectController@show');
+Route::get('user_has_subject/{id_user_has_subject}', 'UserHasSubjectController@show');
 
 Route::post('user_has_subject','UserHasSubjectController@store');
 
-Route::put('user_has_subject/{user_has_subject}','UserHasSubjectController@update');
+Route::put('user_has_subject/{id_user_has_subject}','UserHasSubjectController@update');
 
-Route::delete('user_has_subject/{user_has_subject}', 'UserHasSubjectController@delete');
+Route::delete('user_has_subject/{id_user_has_subject}', 'UserHasSubjectController@delete');
 

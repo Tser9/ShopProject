@@ -13,9 +13,9 @@ class UserHasClassController extends Controller
         return UserHasClass::all();
     }
 
-    public function show(UserHasClass $user_class_class)
+    public function show(UserHasClass $id_user_class_class)
     {
-        return $user_class_class;
+        return $id_user_class_class;
     }
 
     public function store(Request $request)
@@ -25,16 +25,16 @@ class UserHasClassController extends Controller
         return response()->json($user_class_class, 201);
     }
 
-    public function update(Request $request, UserHasClass $user_class_class)
+    public function update(Request $request, UserHasClass $id_user_class_class)
     {
-        $user_class_class->update($request->all());
+        $id_user_class_class->update($request->all());
 
-        return response()->json($user_class_class, 200);
+        return response()->json($id_user_class_class, 200);
     }
 
-    public function delete(UserHasClass $user_class_class)
+    public function delete(UserHasClass $id_user_class_class)
     {
-        $user_class_class->delete();
+        $id_user_class_class->delete();
 
         return response()->json(null, 204);
     }
