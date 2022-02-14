@@ -15,6 +15,7 @@
 			<PROPERTY>class_name</PROPERTY>
 		</ENTITY>
 		<ENTITY ent_id="User_has_Class">
+			<PROPERTY>id_user_has_class</PROPERTY>
 			<PROPERTY>User_id_user</PROPERTY>
 			<PROPERTY>Class_id_class</PROPERTY>
 		</ENTITY>
@@ -23,6 +24,7 @@
 			<PROPERTY>subject_name</PROPERTY>
 		</ENTITY>
 		<ENTITY ent_id="User_has_Subject">
+			PROPERTY>id_user_has_subject</PROPERTY>
 			<PROPERTY>User_id_user</PROPERTY>
 			<PROPERTY>Subject_id_subject</PROPERTY>
 		</ENTITY>
@@ -62,35 +64,31 @@
 		
 		<CONSTRAINT> User: id_user: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
 		<CONSTRAINT> User: : fio: VARCHAR(64), not null; </CONSTRAINT>
-		<CONSTRAINT> User: isteacher: TINYINT;
-</CONSTRAINT>
+		<CONSTRAINT> User: isteacher: TINYINT;</CONSTRAINT>
+	
 		<CONSTRAINT> User_has_Class: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`); </CONSTRAINT>
-		<CONSTRAINT> User_has_Class: Class_id_class: INT, primary key, not null, foreign key (referenced table `Class` column `id_class`);
- </CONSTRAINT>
+		<CONSTRAINT> User_has_Class: Class_id_class: INT, primary key, not null, foreign key (referenced table `Class` column `id_class`); </CONSTRAINT>
+	
 		<CONSTRAINT> Class: id_class: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
 		<CONSTRAINT> Class: class_name: VARCHAR(32), not null; </CONSTRAINT>
-		<CONSTRAINT> User_has_Subject: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`);
- </CONSTRAINT>
-		<CONSTRAINT> User_has_Subject: Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`);
- </CONSTRAINT>
-		<CONSTRAINT> Subject: id_subject:  INT, primary key, not null, unique index, unsigned data type, auto incremental;
- </CONSTRAINT>
+	
+		<CONSTRAINT> User_has_Subject: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`); </CONSTRAINT>
+		<CONSTRAINT> User_has_Subject: Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`); </CONSTRAINT>
+	
+		<CONSTRAINT> Subject: id_subject:  INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
 		<CONSTRAINT> Subject: subject_name: VARCHAR(32), not null; </CONSTRAINT>
-		<CONSTRAINT> Marks: id_mark: INT, primary key, not null, unique index, unsigned data type, auto incremental;
- </CONSTRAINT>
-		<CONSTRAINT> Marks: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`);
-</CONSTRAINT>
-		<CONSTRAINT> Marks: mark: CHAR(1);
-</CONSTRAINT>
-		<CONSTRAINT> Marks: Lesson_id_lesson: INT, primary key, not null, foreign key (referenced table `Lesson` column `id_lesson`);
-</CONSTRAINT>
-		<CONSTRAINT> Lesson: id_lesson: INT, primary key, not null, unique index, unsigned data type, auto incremental;
- </CONSTRAINT>
-		<CONSTRAINT> Lesson: date: DATE, not null;
- </CONSTRAINT>
+	
+		<CONSTRAINT> Marks: id_mark: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
+		<CONSTRAINT> Marks: User_id_user: INT, primary key, not null, foreign key (referenced table `User` column `id_user`);</CONSTRAINT>
+		<CONSTRAINT> Marks: mark: CHAR(1);</CONSTRAINT>
+		<CONSTRAINT> Marks: Lesson_id_lesson: INT, primary key, not null, foreign key (referenced table `Lesson` column `id_lesson`); </CONSTRAINT>
+	
+		<CONSTRAINT> Lesson: id_lesson: INT, primary key, not null, unique index, unsigned data type, auto incremental; </CONSTRAINT>
+		<CONSTRAINT> Lesson: date: DATE, not null; </CONSTRAINT>
+	
 		<CONSTRAINT> Class_id_class: INT, primary key, not null, foreign key (referenced table `Class` column `id_class`) </CONSTRAINT>
-		<CONSTRAINT> Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`);
- </CONSTRAINT>
+	
+		<CONSTRAINT> Subject_id_subject: INT, primary key, not null, foreign key (referenced table `Subject` column `id_subject`); </CONSTRAINT>
 
 
 	</DATA>
