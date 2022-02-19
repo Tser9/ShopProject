@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Iclass;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class IclassController extends Controller
@@ -18,23 +19,40 @@ class IclassController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $class_class = Iclass::create($request->all());
+    {$isteacher=$request->input('isteacher');
+        $class_name=$request->input('class_name');
+        if( $isteacher == 3){
+            $id_user_class = \DB::table('class_class')->where('class_name','=',$class_name)->get();
 
-        return response()->json($class_class, 201);
+            if (!count($id_user_class)){
+                $class_class = Iclass::create(['class_name'=> $class_name]);
+
+                return response()->json($class_class, 201);}}
+
+
     }
 
     public function update(Request $request, Iclass $class_class)
-    {
-        $class_class->update($request->all());
+    {$isteacher=$request->input('isteacher');
+        $class_name=$request->input('class_name');
+        if( $isteacher == 3){
+            $id_user_class = \DB::table('class_class')->where('class_name','=',$class_name)->get();
 
-        return response()->json($class_class, 200);
+            if (!count($id_user_class)){
+                $class_class->update(['class_name'=> $class_name]);
+
+                return response()->json($class_class, 201);}}
+
+
+
     }
 
-    public function delete(Iclass $class_class)
-    {
-        $class_class->delete();
+    public function delete(Request  $request, Iclass $class_class)
+    {$isteacher=$request->input('isteacher');
+        if($isteacher==3){
+            $class_class->delete();
 
-        return response()->json(null, 204);
+            return response()->json(null, 204);}
+
     }
 }
